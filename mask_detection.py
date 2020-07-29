@@ -19,7 +19,7 @@ modelpath = "./model/res10_300x300_ssd_iter_140000.caffemodel"
 detector = cv2.dnn.readNetFromCaffe(prototxt=protopath, caffeModel=modelpath)
 model = load_model("./model/model-017.model")
 
-labels_dict = {0:"masked", 1:"unmasked"}
+labels_dict = {0:"masked ", 1:"unmasked "}
 color_dict = {0:(0,255,0), 1:(0,0,255)}
 
 
@@ -44,7 +44,7 @@ def main():
 
     while True:
         ret, frame = camera.read()
-        frame = imutils.resize(frame, width=600)
+        frame = imutils.resize(frame, width=800, height = 600)
         total_frames = total_frames + 1
 
         (H, W) = frame.shape[:2]
@@ -75,9 +75,8 @@ def main():
                   
                 cv2.rectangle(frame, (startX, startY), (endX, endY), color_dict[label], 2)
                 cv2.rectangle(frame, (startX, startY - 40), (endX, startY), color_dict[label], -1)
-                cv2.putText(frame, labels_dict[label], (startX, startY - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255,255,255), 2)
                 acc=round(np.max(result, axis=1)[0] * 100, 2)
-                cv2.putText(frame, str(acc), (startX+140, startY-10), cv2.FONT_HERSHEY_SIMPLEX, 0.8,(255,255,255), 2) 
+                cv2.putText(frame, labels_dict[label] + str(acc), (startX, startY - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255,255,255), 2)
 
         
         fps = calculateFps(fps_start_time, total_frames)

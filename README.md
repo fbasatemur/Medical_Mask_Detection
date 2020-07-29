@@ -23,3 +23,5 @@ python mask_detection.py
 
 ## Accuracy
 ![screenshot of conversion](https://github.com/fbasatemur/medical_mask_detection/blob/master/Figure_Accuracy.png)
+
+## Mask Detection
