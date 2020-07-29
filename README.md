@@ -21,7 +21,9 @@ the above is enough to do once.
 python mask_detection.py
 ```
 
+## Mask Detection
+![screenshot of conversion](https://github.com/fbasatemur/medical_mask_detection/blob/master/Figure_Masked.jpg)
+
 ## Accuracy
 ![screenshot of conversion](https://github.com/fbasatemur/medical_mask_detection/blob/master/Figure_Accuracy.png)
 
-## Mask Detection
