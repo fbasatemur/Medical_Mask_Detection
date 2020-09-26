@@ -5,6 +5,11 @@ The original dataset is prepared by Prajna Bhandary and available at [github.com
 
 Then place it under the "dataset" folder
 
+## Requirements
+```
+pip install imutils
+pip install opencv-python
+```
 ## If you're first time running
 Firstly
 ```shell
